@@ -1,0 +1,28 @@
+.info-transac {
+  padding: 80px;
+}
+.info {
+  display: flex;
+  padding-top: 0px;
+}
+.info-personal {
+  display: flex;
+  flex-direction: column;
+  padding-top: 0px;
+}
+.info-data {
+  display: flex;
+}
+.nav-litle {
+  padding-top: 40px;
+}
+.nav-litle ul {
+  display: flex;
+  list-style: none;
+}
+.nav-litle ul li {
+  padding: 30px;
+}
+.data {
+  padding-left: 50px;
+}
