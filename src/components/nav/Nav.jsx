@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import "./Nav.css";
 import { Menu } from "./menu";
+import { Link } from "react-router-dom";
 
 const li = Menu.map((item) => <li>{item.title}</li>);
 const Nav = () => {
@@ -12,7 +13,9 @@ const Nav = () => {
           style={{ fontSize: "30px", color: "white" }}
         ></i>
         {li}
-        <i className="fa fa-sign-in" id="icon"></i>
+        <Link to="/signup">
+          <i className="fa fa-sign-in" id="icon"></i>
+        </Link>
       </ul>
     </nav>
   );

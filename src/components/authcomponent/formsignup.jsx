@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Input } from "./input";
+import { Input } from "./microComponent/input";
 import { styles } from "./style/form.style";
-import { Additional } from "./additional";
+import { Additional } from "./microComponent/additional";
 
 export const Form = (props) => {
   const [data, setData] = useState({

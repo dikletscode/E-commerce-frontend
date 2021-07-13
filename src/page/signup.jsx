@@ -6,7 +6,7 @@ import { style } from "./style/signup.style";
 export const Signup = () => {
   return (
     <main style={style.main}>
-      <div className="desc">
+      <div className="descr">
         <p>
           Butuh barang secepatnya dengan harga semurah murahnya?belanja dengan
           Hello aja

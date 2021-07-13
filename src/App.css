@@ -1,12 +1,24 @@
+html,
 body {
-  padding: 0px;
-  margin: 0px;
+  height: 100%;
 }
-.desc {
+body {
+  margin: 0;
+}
+.descr {
   font-family: "Comfortaa", cursive;
   font-size: 30px;
   width: 50%;
   color: #003049;
+}
+#icon-shop {
+  font-size: 40px;
+}
+.b-seller {
+  display: flex;
+  text-align: center;
+  align-content: center;
+  align-items: center;
 }
 header {
   background-color: #d62828;

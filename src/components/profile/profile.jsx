@@ -35,7 +35,7 @@ export const Profile = () => {
           <div className="foto">
             <img src={foto} style={{ height: "200px" }} />
           </div>
-          <div className="data">
+          <div className="mydata">
             <h3> change your information</h3>
             <p>Username :</p>
             <p>Full Name :</p>

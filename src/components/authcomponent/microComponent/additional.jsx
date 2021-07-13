@@ -1,5 +1,5 @@
 import React from "react";
-import { styles } from "./style/form.style";
+import { styles } from "../style/form.style";
 
 export const Additional = () => {
   return (
@@ -16,7 +16,7 @@ export const Additional = () => {
       </div>
       <div style={{ textAlign: "center" }}>
         <p>
-          have an account? <a href="/">LOGIN</a>
+          have an account? <a href="/login">LOGIN</a>
         </p>
       </div>
     </>

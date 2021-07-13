@@ -6,10 +6,10 @@ import { style } from "./style/signup.style";
 export const Login = () => {
   return (
     <main style={style.main}>
-      <div className="desc">
+      <div className="descr">
         <p>
           Butuh barang secepatnya dengan harga semurah murahnya?belanja dengan
-          Hello aja
+          Hellio aja..
         </p>
         <img src={Logo} alt="" style={style.icon} />
       </div>
