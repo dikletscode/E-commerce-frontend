@@ -17,7 +17,7 @@ instance.interceptors.response.use(
       window.location.href = "/accessdenied";
       return Promise.reject(error.response.data.msg);
     } else {
-      return Promise.reject(error);
+      return Promise.reject(error.response.data.msg);
     }
   }
 );

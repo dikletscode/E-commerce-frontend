@@ -1,7 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { styles } from "../style/form.style";
 
-export const Additional = () => {
+const Aggreement = () => {
   return (
     <>
       <div>
@@ -14,9 +15,29 @@ export const Additional = () => {
       <div style={{ textAlign: "center" }}>
         <input type="submit" style={styles.button} />
       </div>
+    </>
+  );
+};
+
+export const AdditionalSignup = () => {
+  return (
+    <>
+      <Aggreement />
       <div style={{ textAlign: "center" }}>
         <p>
-          have an account? <a href="/login">LOGIN</a>
+          have an account? <Link to="/login">LOGIN</Link>
+        </p>
+      </div>
+    </>
+  );
+};
+export const AdditionalLogin = () => {
+  return (
+    <>
+      <Aggreement />
+      <div style={{ textAlign: "center" }}>
+        <p>
+          don't have an account? <Link to="/signup">SIGNUP</Link>
         </p>
       </div>
     </>

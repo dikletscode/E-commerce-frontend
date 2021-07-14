@@ -7,7 +7,8 @@ body {
 }
 .descr {
   font-family: "Comfortaa", cursive;
-  font-size: 30px;
+  font-size: 2em;
+  padding-top: 50px;
   width: 50%;
   color: #003049;
 }

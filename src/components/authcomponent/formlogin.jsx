@@ -1,31 +1,29 @@
 import React, { useContext, useState } from "react";
 import { Input } from "./microComponent/input";
 import { styles } from "./style/form.style";
-import { Additional } from "./microComponent/additional";
+import { AdditionalLogin } from "./microComponent/additional";
 import auth from "../../services/auth.service";
 import { GlobContext } from "../../App";
 import { Redirect } from "react-router-dom";
+import { HandlingError } from "../handlingErrors/handlingError";
 
 export const Form = () => {
   const { stateAuth, dispatchAuth } = useContext(GlobContext);
-  const [isLogin, setLogin] = useState(false);
   const [data, setData] = useState({
     email: "",
     password: "",
   });
 
   const hangleLogin = (e) => {
-    e.preventDefault();
     auth
       .login(data.email, data.password)
-      .then((res) => {
-        setLogin(true);
-        localStorage.setItem("data", JSON.stringify(res.data));
-        dispatchAuth({ type: "LOGIN_SUCCESS", payload: res.data });
+      .then(() => {
+        dispatchAuth({ type: "LOGIN_SUCCESS", payload: "success" });
       })
       .catch((err) => {
         dispatchAuth({ type: "LOGIN_ERROR", payload: err });
       });
+    e.preventDefault();
   };
 
   const handleChange = (e) => {
@@ -57,8 +55,9 @@ export const Form = () => {
                 value={data.password}
                 change={(e) => handleChange(e)}
               />
-              <Additional />
+              <AdditionalLogin />
             </div>
+            <HandlingError message={stateAuth.auth.error} />
           </form>
         </div>
       )}

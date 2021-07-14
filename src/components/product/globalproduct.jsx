@@ -6,6 +6,7 @@ import { styles } from "./product.style";
 import { GlobContext } from "../../App";
 import axios from "../../axiosInstance";
 import JwtValidity from "../../helper/verify";
+import { Loading } from "../loading/loading";
 
 export const GlobalProduct = () => {
   const [data, setData] = useState([]);
@@ -24,27 +25,30 @@ export const GlobalProduct = () => {
   let datas = data;
 
   return (
-    <div style={styles.bigContainer}>
-      {datas.map((item) => {
-        return (
-          <div style={styles.container}>
-            <div style={styles.content}>
-              <img src={item.images} alt="" style={styles.image} />
-              <div style={{ color: "yellow" }}>
-                <i className="fa fa-star"></i>
-                <i className="fa fa-star"></i>
-                <i className="fa fa-star"></i>
-                <i className="fa fa-star"></i>
-                <i className="fa fa-star "></i>
-              </div>
-              <div style={styles.desc}>
-                <p>{item.productName}</p>
-                <small>{item.price}</small>
+    <>
+      <Loading />
+      <div style={styles.bigContainer}>
+        {datas.map((item) => {
+          return (
+            <div style={styles.container}>
+              <div style={styles.content}>
+                <img src={item.images} alt="" style={styles.image} />
+                <div style={{ color: "yellow" }}>
+                  <i className="fa fa-star"></i>
+                  <i className="fa fa-star"></i>
+                  <i className="fa fa-star"></i>
+                  <i className="fa fa-star"></i>
+                  <i className="fa fa-star "></i>
+                </div>
+                <div style={styles.desc}>
+                  <p>{item.productName}</p>
+                  <small>{item.price}</small>
+                </div>
               </div>
             </div>
-          </div>
-        );
-      })}
-    </div>
+          );
+        })}
+      </div>
+    </>
   );
 };

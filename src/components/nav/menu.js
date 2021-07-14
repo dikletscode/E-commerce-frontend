@@ -1,6 +1,5 @@
 export const Menu = [
-  { title: "Beranda" },
+  { title: "Beranda", href: "/" },
   { title: "Transaksi" },
   { title: "Penagihan" },
-  { title: "Profile" },
 ];
