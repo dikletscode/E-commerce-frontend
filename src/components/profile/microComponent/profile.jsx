@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 
-import foto from "./assets/3.png";
-import "./assets/profile.css";
+import foto from "../assets/3.png";
+import "../assets/profile.css";
 import { EdiProfile, HandleImage } from "./input";
 
 export const Profile = ({ profile }) => {
@@ -38,16 +38,16 @@ export const Profile = ({ profile }) => {
               <label class="upload">
                 <img
                   src={`http://localhost:3000/uploads/${info.images}`}
-                  height="50px"
+                  className="avatar"
                 />
                 <HandleImage
                   change={(e) => imageOnChange(e)}
                   id="images"
                   value={img}
                 />
-                <br />
-                Upload Image
               </label>
+              <br />
+              Upload Image
             </div>
             <div className="mydata">
               <h3> change your information</h3>

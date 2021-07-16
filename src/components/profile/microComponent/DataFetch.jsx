@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useContext } from "react";
-import user from "../../services/user.service";
-import { getUserid } from "../../helper/user";
+import user from "../../../services/user.service";
+import { getUserid } from "../../../helper/user";
 import { Profile } from "./profile";
-import { Loading } from "../loading/loading";
+import { Loading } from "../../loading/loading";
 import StartSelling from "./startSelling";
 
 const DataFetch = ({ name }) => {

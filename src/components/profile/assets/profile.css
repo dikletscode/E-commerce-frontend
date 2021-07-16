@@ -6,6 +6,7 @@
   padding-top: 0px;
   flex-wrap: wrap;
   overflow: auto;
+  font-size: 1.2em;
 }
 .info-personal {
   display: flex;
@@ -14,6 +15,18 @@
 }
 input[type="file"] {
   display: none;
+}
+.avatar {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+.avatar-seller {
+  border-radius: 30%;
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
 }
 .upload {
   border: 1px solid #ccc;
@@ -36,4 +49,21 @@ input[type="file"] {
 }
 .mydata {
   padding-left: 50px;
+}
+.button-seller {
+  height: 50px;
+  background: linear-gradient(45deg, transparent 5%, #ff013c 5%);
+  border: 0;
+  color: #fff;
+  font-size: 1em;
+  box-shadow: 6px 0px 0px #00e6f6;
+  outline: transparent;
+  transition-duration: 0.9s;
+}
+.button-seller:hover {
+  background: linear-gradient(45deg, transparent 5%, #ffffff 5%);
+  color: black;
+  font-size: 1em;
+  box-shadow: 6px 0px 0px #00e6f6;
+  outline: transparent;
 }

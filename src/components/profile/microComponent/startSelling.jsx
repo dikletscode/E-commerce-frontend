@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import "./assets/profile.css";
+import "../assets/profile.css";
 import { EdiProfile } from "./input";
-import prof from "./assets/2.png";
-import StoreRegister from "../../page/storeRegister";
+
+import StoreRegister from "../../../page/storeRegister";
 
 const StartSelling = ({ profile }) => {
   const [display, setDisplay] = useState("none");
@@ -51,7 +51,7 @@ const StartSelling = ({ profile }) => {
               <div className="foto">
                 <img
                   src={`http://localhost:3000/uploads/${info.images}`}
-                  style={{ height: "200px" }}
+                  className="avatar-seller"
                 />
               </div>
               <div className="mydata">
@@ -105,12 +105,9 @@ const StartSelling = ({ profile }) => {
               />
             </div>
             <div onClick={() => changeState()} style={{ textAlign: "center" }}>
-              <i
-                onClick={() => checkAdmin()}
-                className="fa fa-check"
-                id="icon-shop"
-                style={{ fontSize: "26px", color: "black" }}
-              ></i>
+              <button onClick={() => checkAdmin()} className="button-seller">
+                START SELLING
+              </button>
             </div>
           </>
         );

@@ -6,9 +6,9 @@ export const logout = () => {
   localStorage.removeItem("data");
 };
 
-const regisStore = (agree, id) => {
+const regisStore = (id, agree) => {
   return axios.patch(
-    "/store/register/" + id,
+    `/store/register/${id}`,
     {
       agree: agree,
     },

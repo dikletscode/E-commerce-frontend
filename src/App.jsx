@@ -13,7 +13,8 @@ import Home from "./page/home";
 import { ErrorPage } from "./page/errorPage";
 import PublicRoute from "./Routes/public";
 import PrivateRoute from "./Routes/private";
-import StoreRegister from "./page/storeRegister";
+import { Card } from "./page/congratIsAdmin";
+import { ProductEtalase } from "./components/admin/productEtalase";
 
 export const GlobContext = createContext({});
 const App = () => {
@@ -27,22 +28,21 @@ const App = () => {
         <Router>
           <header>
             <h1>Hello</h1>
-
             <Nav />
           </header>
-
           <Switch>
             <Route component={Signup} path="/signup" />
             <PublicRoute restricted={false} component={Home} path="/" exact />
             <Route path="/accessdenied" component={ErrorPage} />
-
             <PublicRoute
               restricted={true}
               component={Login}
               path="/login"
               exact
             />
+            <Route component={Card} path="/success" />
             <PrivateRoute component={Profiles} path="/profile" exact />
+            <PrivateRoute component={ProductEtalase} path="/mystore" exact />
             <Route component={Login} />
           </Switch>
 

@@ -31,6 +31,14 @@ const Nav = () => {
               style={{ fontSize: "30px", color: "white" }}
             ></i>
           </li>
+          <li>
+            <Link
+              to="/mystore"
+              style={{ textDecoration: "none", color: "white" }}
+            >
+              MyStore
+            </Link>
+          </li>
 
           {li}
           <li style={{ display: display }}>

@@ -1,8 +1,7 @@
 import React, { useContext, useState } from "react";
-import { Profile } from "./profile";
 import "./assets/profile.css";
-import StartSelling from "./startSelling";
-import DataFetch from "./DataFetch";
+
+import DataFetch from "./microComponent/DataFetch";
 import { useLocation, Link } from "react-router-dom";
 
 const Personal = () => {

@@ -12,16 +12,14 @@ const StoreRegister = (props) => {
     setAggree(e.target.checked);
   };
   const handleSubmit = (e) => {
-    auth
-      .regisStore(agree, getUserid())
-      .then((res) => {
-        setAdmin(res.data.msg);
-      })
-      .catch((err) => {
-        setAdmin(err.msg);
-      });
+    auth.regisStore(getUserid(), agree).then((res) => {
+      if (res.data.isAdmin == true) {
+        window.location.href = "/success";
+      }
+    });
     e.preventDefault();
   };
+  console.log(agree);
 
   return (
     <div className="popup" style={{ display: props.display }}>
@@ -34,7 +32,7 @@ const StoreRegister = (props) => {
       </div>
       {props.isAdmin ? (
         <form onSubmit={(e) => handleSubmit(e)}>
-          <div>
+          <div className="check-agree">
             <input
               type="checkbox"
               id="agree"
@@ -42,13 +40,15 @@ const StoreRegister = (props) => {
               onChange={handleChange}
               value={agree}
             />
-            <label for="vehicle1" style={{ fontSize: "20px" }}>
-              I agree to the terms
+            <label for="agree" className="label" style={{ fontSize: "24px" }}>
+              By signing up, you agree to Helio's terms of Service and Privacy
+              Policy
             </label>
             <br />
           </div>
-          <div style={{ textAlign: "center" }}>
-            <input type="submit" />
+          <br />
+          <div>
+            <input type="submit" className="submit-agree" />
           </div>
         </form>
       ) : (

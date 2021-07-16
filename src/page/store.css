@@ -18,6 +18,34 @@
   animation-duration: 0.4s;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+input[type="checkbox"] {
+  font-style: italic;
+  -ms-transform: scale(2);
+  -moz-transform: scale(2);
+  -webkit-transform: scale(2);
+  -o-transform: scale(2);
+  transform: scale(2);
+  padding: 10px;
+  padding-right: 50px;
+}
+input[type="checkbox"]:checked + label {
+  color: red;
+}
+.submit-agree {
+  font-size: 20px;
+  transition-duration: 0.4s;
+}
+.submit-agree:hover {
+  background-color: #4caf50; /* Green */
+  color: white;
+}
+.check-agree {
+  display: grid;
+  text-align: center;
+  padding: 7px 20px;
+  grid-template-columns: 0.1fr 1.2fr;
+}
+
 @-webkit-keyframes slideIn {
   from {
     bottom: -300px;
