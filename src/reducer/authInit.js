@@ -33,16 +33,6 @@ export const authInit = (state, { type, payload }) => {
           error: payload,
         },
       };
-    case "FETCH_ERROR":
-      return {
-        ...state,
-        auth: {
-          ...state.auth,
-          isLogin: false,
-          loading: false,
-          error: payload,
-        },
-      };
 
     default:
       return state;

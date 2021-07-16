@@ -3,14 +3,14 @@ import "./loading.css";
 import load from "./load.gif";
 import { GlobContext } from "../../App";
 
-export const Loading = () => {
+export const Loading = (props) => {
   const { stateAuth, dispatchAuth } = useContext(GlobContext);
   let isLoading = stateAuth.auth.loading ? "flex" : "none";
   return (
     <>
       <div
         style={{
-          display: isLoading,
+          display: props.show,
           paddingLeft: "400px",
           paddingTop: "150px",
         }}

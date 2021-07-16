@@ -1,8 +1,21 @@
 import axios from "../axiosInstance";
 import { v4 as uuidv4 } from "uuid";
+import JwtValidity from "../helper/verify";
 
 export const logout = () => {
   localStorage.removeItem("data");
+};
+
+const regisStore = (agree, id) => {
+  return axios.patch(
+    "/store/register/" + id,
+    {
+      agree: agree,
+    },
+    {
+      headers: JwtValidity(),
+    }
+  );
 };
 
 const signUp = (username, email, password) => {
@@ -26,6 +39,7 @@ const login = async (email, password) => {
 };
 
 export default {
+  regisStore,
   signUp,
   login,
 };

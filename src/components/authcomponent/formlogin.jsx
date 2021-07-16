@@ -21,7 +21,7 @@ export const Form = () => {
         dispatchAuth({ type: "LOGIN_SUCCESS", payload: "success" });
       })
       .catch((err) => {
-        dispatchAuth({ type: "LOGIN_ERROR", payload: err });
+        dispatchAuth({ type: "LOGIN_ERROR", payload: err.msg });
       });
     e.preventDefault();
   };

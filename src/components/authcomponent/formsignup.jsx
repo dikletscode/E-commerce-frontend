@@ -22,7 +22,7 @@ export const Form = () => {
         window.location.href = "/login";
       })
       .catch((err) => {
-        dispatchAuth({ type: "SIGNUP_ERROR", payload: err });
+        dispatchAuth({ type: "SIGNUP_ERROR", payload: err.msg });
       });
 
     e.preventDefault();

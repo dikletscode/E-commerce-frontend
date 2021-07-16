@@ -11,13 +11,13 @@ instance.interceptors.response.use(
   },
   (error) => {
     if (error.response.status == 401) {
-      return Promise.reject(error.response.data.msg);
+      return Promise.reject(error.response.data);
     } else if (error.response.status == 403) {
       localStorage.removeItem("data");
       window.location.href = "/accessdenied";
-      return Promise.reject(error.response.data.msg);
+      return Promise.reject(error.response.data);
     } else {
-      return Promise.reject(error.response.data.msg);
+      return Promise.reject(error.response.data);
     }
   }
 );

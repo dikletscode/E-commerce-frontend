@@ -1,49 +1,125 @@
-import React from "react";
-import foto from "./assets/1.png";
+import React, { useEffect, useState, useContext } from "react";
+
+import foto from "./assets/3.png";
 import "./assets/profile.css";
+import { EdiProfile, HandleImage } from "./input";
 
-export const Profile = () => {
+export const Profile = ({ profile }) => {
+  const [isEditing, setIsEditing] = useState({
+    fullName: false,
+    address: false,
+    notelp: false,
+  });
+  const [data, setData] = useState(profile[0]);
+  const [img, setImg] = useState(profile[0].images);
+
+  const handleChange = (e) => {
+    const dataOnChange = { ...data };
+    dataOnChange[e.target.id] = e.target.value;
+    setData(dataOnChange);
+  };
+  const imageOnChange = (e) => {
+    setImg(e.target.files[0]);
+  };
+  const klik = {
+    name: () => setIsEditing({ fullName: true }),
+    address: () => setIsEditing({ address: true }),
+    notelp: () => setIsEditing({ notelp: true }),
+  };
+
+  console.log(data);
+  // console.log(state.auth.result[0] || null, "asep");
   return (
-    <div className="info">
-      <div className="info-transac">
-        <img
-          src={foto}
-          alt=""
-          style={{ height: "80px", borderRadius: "100px" }}
-        />
-        <p>Isyana</p>
-        <div>
-          <p>kotak masuk</p>
-          <p>Chat</p>
-          <p>Ulasan</p>
-          <p>Pesanan Dikomplain</p>
-        </div>
-      </div>
+    <>
+      {profile.map((info) => {
+        return (
+          <div className="info-data">
+            <div className="foto">
+              <label class="upload">
+                <img
+                  src={`http://localhost:3000/uploads/${info.images}`}
+                  height="50px"
+                />
+                <HandleImage
+                  change={(e) => imageOnChange(e)}
+                  id="images"
+                  value={img}
+                />
+                <br />
+                Upload Image
+              </label>
+            </div>
+            <div className="mydata">
+              <h3> change your information</h3>
+              <table>
+                <tr>
+                  <td>FullName </td>
+                  {isEditing.fullName ? (
+                    <td>
+                      <EdiProfile
+                        value={data.fullName}
+                        change={(e) => handleChange(e)}
+                        id="fullName"
+                        data={data}
+                      />
+                    </td>
+                  ) : (
+                    <td>: {info.fullName}</td>
+                  )}
+                  <td>
+                    <button onClick={klik.name}>edit</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Username </td>
+                  <td>: {info.username}</td>
+                </tr>
 
-      <div className="info-personal">
-        <div>
-          <nav className="nav-litle">
-            <ul>
-              <li>change personal information</li>
-              <li>transaction</li>
-              <li>set new address</li>
-              <li>Bank ACcount</li>
-            </ul>
-          </nav>
-        </div>
-        <div className="info-data">
-          <div className="foto">
-            <img src={foto} style={{ height: "200px" }} />
+                <tr>
+                  <td>Address</td>
+                  {isEditing.address ? (
+                    <td>
+                      <EdiProfile
+                        value={data.address}
+                        change={(e) => handleChange(e)}
+                        id="address"
+                        data={data}
+                      />
+                    </td>
+                  ) : (
+                    <td>: {info.address}</td>
+                  )}
+                  <td>
+                    <button onClick={klik.address}>edit</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>No Telephone</td>
+                  {isEditing.notelp ? (
+                    <td>
+                      <EdiProfile
+                        value={data.notelp}
+                        change={(e) => handleChange(e)}
+                        id="notelp"
+                        data={data}
+                      />
+                    </td>
+                  ) : (
+                    <td>: {info.notelp}</td>
+                  )}
+                  <td>
+                    <button onClick={klik.notelp}>edit</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </table>
+            </div>
           </div>
-          <div className="mydata">
-            <h3> change your information</h3>
-            <p>Username :</p>
-            <p>Full Name :</p>
-            <p>Address :</p>
-            <p>No Telepon :</p>
-          </div>
-        </div>
-      </div>
-    </div>
+        );
+      })}
+    </>
   );
 };

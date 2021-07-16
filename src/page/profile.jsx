@@ -1,6 +1,6 @@
 import React from "react";
-import { Profile } from "../components/profile/profile";
+import Personal from "../components/profile/personal";
 
 export const Profiles = () => {
-  return <Profile />;
+  return <Personal />;
 };

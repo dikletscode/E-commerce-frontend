@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useContext, createContext, useReducer } from "react";
+import React, { useContext, createContext, useReducer, useState } from "react";
 import { Signup } from "./page/signup";
 import { Login } from "./page/login";
 import { Profiles } from "./page/profile";
@@ -13,11 +13,12 @@ import Home from "./page/home";
 import { ErrorPage } from "./page/errorPage";
 import PublicRoute from "./Routes/public";
 import PrivateRoute from "./Routes/private";
+import StoreRegister from "./page/storeRegister";
 
 export const GlobContext = createContext({});
-
 const App = () => {
   const [stateAuth, dispatchAuth] = useReducer(authInit, init);
+
   // console.log(stateAuth);
 
   return (
@@ -27,10 +28,6 @@ const App = () => {
           <header>
             <h1>Hello</h1>
 
-            <div className="b-seller">
-              <i class="fa fa-shopping-bag" id="icon-shop"></i>
-              <p style={{ fontSize: "20px" }}>Become seller</p>
-            </div>
             <Nav />
           </header>
 
@@ -52,7 +49,6 @@ const App = () => {
           <Footer />
         </Router>
       </GlobContext.Provider>
-
       {/* </GlobProvider> */}
     </>
   );

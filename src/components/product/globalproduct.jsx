@@ -22,27 +22,30 @@ export const GlobalProduct = () => {
         console.log(err);
       });
   }, []);
-  let datas = data;
+  console.log(data);
 
   return (
     <>
-      <Loading />
+      {/* <Loading /> */}
       <div style={styles.bigContainer}>
-        {datas.map((item) => {
+        {data.map((item) => {
           return (
             <div style={styles.container}>
               <div style={styles.content}>
                 <img src={item.images} alt="" style={styles.image} />
-                <div style={{ color: "yellow" }}>
-                  <i className="fa fa-star"></i>
-                  <i className="fa fa-star"></i>
-                  <i className="fa fa-star"></i>
-                  <i className="fa fa-star"></i>
-                  <i className="fa fa-star "></i>
+                <div style={styles.desc}>
+                  <p>{item.productName}</p>
+                  <small>{item.price}</small>
+                  <small>{item.fullName}</small>
                 </div>
                 <div style={styles.desc}>
                   <p>{item.productName}</p>
                   <small>{item.price}</small>
+                  <small>{item.fullName}</small>
+                </div>
+
+                <div style={{ textAlign: "start" }}>
+                  <i className="fa fa-star" style={{ color: "yellow" }}></i>5
                 </div>
               </div>
             </div>
